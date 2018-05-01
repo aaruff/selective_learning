@@ -1,0 +1,35 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Select a Problem
+{% endblock %}
+
+{% block content %}
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td><button class="btn btn-info" data-id="1">P1</button></td>
+        <td><button class="btn btn-info" data-id="2">P2</button></td>
+      </tr>
+      <tr>
+        <td><button class="btn btn-info" data-id="3">P3</button></td>
+        <td><button class="btn btn-info" data-id="4">P4</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <input id="problem" name="problem" type="hidden" value="0">
+
+    {% next_button %}
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+$('button').click(function() {
+  $('input#problem').val($(this).data('id'));
+  console.log($(this).data('id'));
+  $('#form').submit();
+});
+</script>
+{% endblock %}

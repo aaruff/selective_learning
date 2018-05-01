@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Solve the Problem or Continue
+{% endblock %}
+
+{% block content %}
+<h3>You Selected Problem: {{player.problem}}</h3>
+
+<input id="choice" name="choice" type="hidden" value="0">
+<div>
+  <button class="btn btn-success">Solve</button>
+</div>
+<div>
+  <button class="btn btn-success">Back</button>
+</div>
+{% endblock %}
