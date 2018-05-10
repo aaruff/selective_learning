@@ -9,24 +9,25 @@ Select a Problem
   <table class="table table-bordered">
     <tbody>
       <tr>
-        <td><button class="btn btn-info" data-id="1">P1</button></td>
-        <td><button class="btn btn-info" data-id="2">P2</button></td>
+        <td><button class="btn btn-info pbutton" data-id="0">P1, Hard</button></td>
+        <td><button class="btn btn-info pbutton" data-id="1">P2, Easy</button></td>
       </tr>
       <tr>
-        <td><button class="btn btn-info" data-id="3">P3</button></td>
-        <td><button class="btn btn-info" data-id="4">P4</button></td>
+        <td><button class="btn btn-info pbutton" data-id="2">P3, Hard</button></td>
+        <td><button class="btn btn-info pbutton" data-id="3">P4, Hard</button></td>
       </tr>
     </tbody>
   </table>
   <input id="problem" name="problem" type="hidden" value="0">
+
+  {% next_button %}
 {% endblock %}
 
 {% block scripts %}
 <script>
-$('button').click(function() {
+$('.pbutton').click(function(e) {
   $('input#problem').val($(this).data('id'));
   console.log($(this).data('id'));
-  $('#form').submit();
 });
 </script>
 {% endblock %}
