@@ -6,7 +6,12 @@ Solve the Problem or Continue
 {% endblock %}
 
 {% block content %}
-<h3>You Selected Problem: {{player.problem}}</h3>
+<h3>Problem List</h3>
+<ul>
+{% for problem in problems %}
+  <li>{{ problem }}</li>
+{% endfor %}
+<ul>
 
 <input id="choice" name="choice" type="hidden" value="0">
 <div>
