@@ -1,3 +1,5 @@
+import random
+
 from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from .models import Constants
@@ -9,7 +11,9 @@ class SelectProblemPage(Page):
 
 
 class ChooseToSolvePage(Page):
-    pass
+    def vars_for_template(self):
+        pid = self.player.problem
+        return {'problems': self.player.participant.vars['problems'][pid]}
 
 
 page_sequence = [
